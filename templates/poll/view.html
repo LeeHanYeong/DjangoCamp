@@ -1,0 +1,6 @@
+<h1>#{{ vote.id }} - {{ vote.title }}</h1>
+{% for item in vote.voteselect_set.all %}
+<a href="/polls/{{ vote.id }}/vote?item_id={{ item.id }}">
+    <p>{{ item.message }} {{ item.get_count }}</p>
+</a>
+{% endfor %}
